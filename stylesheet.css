@@ -1,0 +1,486 @@
+/* 引入 Google 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* 重置樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本樣式 */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #222;
+}
+
+a {
+    color: #d4af37; /* 金色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #b08f2a;
+}
+
+/* 導航欄樣式 */
+header {
+    background-color: #222;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul.nav-links li a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px; /* 增加內邊距以顯示背景色 */
+    border-radius: 5px; /* 可選：添加圓角效果 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 添加過渡效果 */
+}
+
+/* 懸停時改變背景色和文字顏色 */
+nav ul.nav-links li a:hover {
+    background-color: #d4af37; /* 金色背景 */
+    color: #222; /* 深色文字 */
+}
+
+.utilities {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.utilities .search-icon,
+.utilities .wishlist-icon {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.utilities .language-selector {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+/* 英雄橫幅樣式 */
+.hero-banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 80px; /* 導航欄高度 */
+    background-color: #333; /* 默認深灰色背景 */
+}
+
+.hero-banner .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 34, 34, 0.5); /* 半透明覆蓋層 */
+}
+
+.hero-banner img.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-banner .hero-logo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px; /* 標誌寬度，根據需要調整 */
+}
+
+.hero-banner .hero-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-banner .hero-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-banner .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-banner .btn {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.hero-banner .btn:hover {
+    background-color: #b08f2a;
+}
+
+/* 產品分類樣式 */
+.product-categories {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.product-categories h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.product-categories .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.product-categories .category {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-categories .category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.product-categories .category img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-categories .category h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+
+.product-categories .category p {
+    padding: 0 20px 20px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* 品牌信息樣式 */
+.brand-info {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.brand-info h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.brand-info .brand-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.brand-info .brand-image {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.brand-info .brand-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.brand-info .brand-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.brand-info .btn {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.brand-info .btn:hover {
+    background-color: #b08f2a;
+}
+
+/* 客戶評價樣式 */
+.testimonials {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.testimonials .testimonial {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-style: italic;
+    color: #555;
+    position: relative;
+    padding: 20px;
+}
+
+.testimonials .testimonial::before {
+    content: "“";
+    font-size: 50px;
+    color: #d4af37;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.testimonials .testimonial::after {
+    content: "”";
+    font-size: 50px;
+    color: #d4af37;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+}
+
+/* 頁腳樣式 */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.social-media a:hover {
+    color: #d4af37;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Cookie 提示樣式 */
+.cookie-notice {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(34,34,34,0.9);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1001;
+}
+
+.cookie-notice a {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.cookie-notice .btn {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-notice .btn:hover {
+    background-color: #b08f2a;
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .brand-info .brand-content {
+        flex-direction: column;
+    }
+
+    .product-categories .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 平板和平板尺寸設備（介於 769px 和 992px 之間） */
+@media (max-width: 992px) {
+    /* 導航欄調整 */
+    nav ul.nav-links {
+        flex-direction: column;
+        gap: 15px;
+        background-color: #222;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        display: none;
+        border-radius: 5px;
+    }
+
+    nav ul.nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    /* 品牌信息區域調整 */
+    .brand-info .brand-text {
+        text-align: center;
+    }
+
+    /* 英雄橫幅調整 */
+    .hero-text h1 {
+        font-size: 40px; /* 減小主標題字體大小 */
+    }
+
+    .hero-text .btn {
+        padding: 12px 25px; /* 調整按鈕內邊距 */
+        font-size: 16px; /* 調整按鈕字體大小 */
+    }
+
+    /* 產品分類調整 */
+    .product-categories {
+        padding: 60px 20px; /* 調整內邊距 */
+    }
+
+    .product-categories h2 {
+        font-size: 32px; /* 減小標題字體大小 */
+    }
+
+    .product-categories .category {
+        width: 45%; /* 兩列顯示 */
+    }
+
+    /* 品牌信息區域調整 */
+    .brand-info .brand-content {
+        gap: 30px; /* 調整圖片和文字之間的間距 */
+    }
+
+    .brand-info .brand-image {
+        width: 250px; /* 調整圖片寬度 */
+    }
+
+    .brand-info .brand-text {
+        max-width: 500px; /* 調整文字區域寬度 */
+        text-align: left; /* 保持文字左對齊 */
+    }
+
+    /* 客戶評價調整 */
+    .testimonials .testimonial {
+        max-width: 700px; /* 調整評價區域寬度 */
+        margin: 0 auto 30px; /* 調整下邊距 */
+    }
+
+    /* 頁腳調整 */
+    footer .footer-links a {
+        margin: 0 10px; /* 調整頁腳連結間的間距 */
+        font-size: 15px; /* 調整頁腳字體大小 */
+    }
+
+    footer .social-media a {
+        font-size: 16px; /* 調整社交媒體圖標大小 */
+    }
+}
